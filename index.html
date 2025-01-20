@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <title>Redirect to DarkNet - PRIVATE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!--[if IE]>
+    <style type="text/css">
+      /* CSS dla przeglądarek IE */
+      html {overflow-y:hidden;}
+      body {overflow-y:auto;}
+      #sfondo {position:absolute; z-index:-1;}
+    </style>
+    <![endif]-->
+    <script>
+      // Funkcja do pełnoekranowego trybu
+      function go_full_screen() {
+        if (document.documentElement.requestFullscreen) {
+          document.documentElement.requestFullscreen();
+        } else if (document.documentElement.mozRequestFullScreen) {
+          document.documentElement.mozRequestFullScreen();
+        } else if (document.documentElement.webkitRequestFullscreen) {
+          document.documentElement.webkitRequestFullscreen();
+        } else if (document.documentElement.msRequestFullscreen) {
+          document.documentElement.msRequestFullscreen();
+        }
+      }
+
+      // Funkcja, która aktywuje jumpscare
+      function attiva() {
+        const jumpscare = document.getElementById('jumpscare');
+        jumpscare.style.display = 'block'; // Pokazuje jumpscare
+        const audio = document.getElementById('audio');
+        audio.play(); // Odtwarza dźwięk
+      }
+
+      // Uruchamianie jumpscare automatycznie po załadowaniu strony
+      window.onload = function () {
+        go_full_screen();
+        attiva();
+      };
+    </script>
+  </head>
+  <body>
+    <article id="fakesite">
+      <img src="backjs.jpg" id="sfondo" />
+      <center>
+        <h1>WARNING</h1>
+        <h1>Get VPN first to enter the darknet, make yourself secure</h1>
+      </center>
+    </article>
+
+    <div id="jumpscare">
+      <audio id="audio">
+        <source src="scare.mp3" type="audio/mpeg">
+      </audio>
+      <img src="jamp.gif" alt="Jumpscare Image">
+      <p id="message"></p>
+    </div>
+  </body>
+</html>
